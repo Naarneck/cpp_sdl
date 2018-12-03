@@ -4,6 +4,8 @@
 #include <sstream>
 #include <SDL2/SDL.h>
 #include <math.h>
+#include <iostream>
+#include "Vec2.h"
 
 class Window{
 	private:

@@ -30,8 +30,21 @@ int	Window::handleEvents(SDL_Event event){
 		}
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym){
-				case SDLK_t: { 
-					return 2;
+				case SDLK_w: { 
+					return 1;
+				}
+				case SDLK_a: { 
+					return 1;
+				}
+				case SDLK_s: { 
+					return 1;
+				}
+				case SDLK_d: { 
+					return 1;
+				}
+				case SDLK_ESCAPE: 
+				{
+					return 0;
 				}
 			}
 		}
@@ -39,8 +52,6 @@ int	Window::handleEvents(SDL_Event event){
 }
 
 int Window::update(){
-	SDL_PollEvent(&_e);
-	handleEvents(_e);
-	std::cout<<"update"<<std::endl;
-	return 1;
+	SDL_PollEvent(&_e);	
+	return handleEvents(_e);
 }
