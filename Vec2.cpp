@@ -12,9 +12,6 @@ Vec2::Vec2(float x1, float y1){
 Vec2::~Vec2(){
 }
 
-float	Vec2::getX() const	{ return x; }
-float	Vec2::getY() const	{ return y; }
-
 void	Vec2::normalize(){
 	x /= length();
 	y /= length();
@@ -52,6 +49,6 @@ Vec2::Vec2(Vec2 const& copy){
 
 std::ostream& operator<<(std::ostream& o, Vec2 const& rhs)
 {
-	o << '(' << rhs.getX() << ' ' << rhs.getY() << ")";
+	o << '(' << rhs.x << ' ' << rhs.y << ")";
 	return o;
 }

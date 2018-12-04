@@ -1,26 +1,30 @@
 #include "Window.h"
 
 Window::Window(){
-	_height = _width = 400;
+	height = width = 400;
 }
 
-Window::Window(int h, int w) :	_height(h),
-							 	_width(w),
+Window::Window(int h, int w) :	height(h),
+							 	width(w),
 								_window(NULL),
-								_screen(NULL){
+								renderer(NULL)
+								{
 }
 
 Window::~Window(){
-	SDL_FreeSurface(_screen);
+	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(_window);
 	SDL_Quit();
 }
 
 void Window::init(){
-	SDL_Init(SDL_INIT_VIDEO);
+	if (SDL_Init(SDL_INIT_VIDEO) != 0){
+		std::cout<<"SDL_INIT_ERROR"<<std::endl;
+		return ;
+	}
 	_window = SDL_CreateWindow("Game", SDL_WINDOWPOS_CENTERED,
-			SDL_WINDOWPOS_CENTERED, _width, _height, SDL_WINDOW_OPENGL);
-	_screen = SDL_GetWindowSurface(_window);
+			SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
+	renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_ACCELERATED);
 }
 
 int	Window::handleEvents(SDL_Event event){
@@ -51,7 +55,18 @@ int	Window::handleEvents(SDL_Event event){
 	return 1;
 }
 
-int Window::update(){
+void	Window::clear() const{
+	SDL_RenderPresent(renderer);
+	SDL_SetRenderDrawColor(renderer, 50, 50, 50, 255);
+	SDL_RenderClear(renderer);
+}
+
+int 	Window::update(){
 	SDL_PollEvent(&_e);	
 	return handleEvents(_e);
 }
+
+Vec2	Window::center(){
+	return Vec2(width / 2, height / 2);
+}
+

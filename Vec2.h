@@ -6,8 +6,7 @@
 #include <iostream>
 
 class Vec2{
-
-	private:
+	public:
 		float 	x;
 		float 	y;
 
@@ -24,8 +23,6 @@ class Vec2{
 		float 	length();
 		float 	dot(Vec2 vec);
 		void 	normalize();
-		float	getX()	const;
-		float	getY()	const;
 };
 
 std::ostream& operator<<(std::ostream& o, Vec2 const& rhs);
