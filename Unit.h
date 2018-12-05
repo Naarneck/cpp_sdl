@@ -8,7 +8,7 @@
 #include "Window.h"
 
 class Unit {
-	private:
+	protected:
 		std::string 	_name;
 		int 			_hp;
 		Vec2			_position;
@@ -22,7 +22,7 @@ class Unit {
 		~Unit();
 
 		void 	draw(Window *win);
-	private:
+	protected:
 		void setBounds(Vec2 pos, Vec2 dim);
 };
 

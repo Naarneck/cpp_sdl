@@ -11,8 +11,8 @@ Unit::Unit(){
 Unit::Unit(Vec2 pos, Vec2 dir, const char* texName, Window *win){
 	SDL_Surface*	surface;
 
-	_position = Vec2();
-	_direction = Vec2();
+	_position = pos;
+	_direction = dir;
 
 	surface = IMG_Load(texName);
 	_texture = SDL_CreateTextureFromSurface(win->renderer, surface);
@@ -24,7 +24,7 @@ Unit::~Unit(){
 }
 
 void Unit::draw(Window *win){
-	setBounds(Vec2(100 ,100), Vec2(20 ,20));
+	setBounds(_position, Vec2(50 ,50)); //size 50x50
 	std::cout<<_bounds.x<<_bounds.y<<_bounds.w<<_bounds.h<<std::endl;
 	if (_texture){
 		SDL_RenderCopy(win->renderer, _texture, NULL, &_bounds);
