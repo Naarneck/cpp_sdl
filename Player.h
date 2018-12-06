@@ -15,6 +15,7 @@ class Player : public Unit {
 		void	moveLeft();
 		void	moveRight();
 
+		void 	handlInpust();
 };
 
 #endif

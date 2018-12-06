@@ -5,8 +5,7 @@
 #include "Window.h"
 #include "Unit.h"
 
-int	main(int ac, char **av)
-{
+int	main(int ac, char **av){
 	int run = 1;
 
 	if (ac != 3)
@@ -15,12 +14,21 @@ int	main(int ac, char **av)
 	win.init();
 
 	Unit unit(win.center(), Vec2(10,10), "res/unit_0.png", &win);
-	Player player(Vec2(15,15), Vec2(10,10), "res/unit_0.png", &win);
-	while (run)
-	{
+	Player player(Vec2(15,15), Vec2(10,10), "res/unit_2.png", &win);
+	while (run)	{
 		unit.draw(&win);
 		player.draw(&win);
 		run = win.update();
+		//test
+		if (run == 2)
+			player.moveUp();
+		if (run == 3)
+			player.moveLeft();
+		if (run == 4)
+			player.moveDown();
+		if (run == 5)
+			player.moveRight();
+		//test
 		win.clear();
 	}
 	return (0);

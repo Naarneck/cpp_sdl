@@ -35,16 +35,16 @@ int	Window::handleEvents(SDL_Event event){
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.sym){
 				case SDLK_w: { 
-					return 1;
+					return 2;
 				}
 				case SDLK_a: { 
-					return 1;
+					return 3;
 				}
 				case SDLK_s: { 
-					return 1;
+					return 4;
 				}
 				case SDLK_d: { 
-					return 1;
+					return 5;
 				}
 				case SDLK_ESCAPE: 
 				{
