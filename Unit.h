@@ -1,6 +1,8 @@
 #ifndef UNIT_H
 #define UNIT_H
 
+#define STEP 1
+
 #include <string>
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
@@ -22,8 +24,9 @@ class Unit {
 		~Unit();
 
 		void 	draw(Window *win);
+		Vec2	getPos();
 	protected:
-		void setBounds(Vec2 pos, Vec2 dim);
+		void 	setBounds(Vec2 pos, Vec2 dim);
 };
 
 #endif

@@ -20,7 +20,7 @@ class Window{
 
 	public:
 		Window();
-		Window(int h, int w);
+		Window(int w, int h);
 		~Window();
 
 		void	init();

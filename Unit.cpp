@@ -41,3 +41,6 @@ void Unit::setBounds(Vec2 pos, Vec2 dim){
 	_bounds.h = dim.y;
 }
 
+Vec2 Unit::getPos(){
+	return Vec2(_position.x, _position.y);
+}

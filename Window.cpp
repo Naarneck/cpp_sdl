@@ -4,7 +4,7 @@ Window::Window(){
 	height = width = 400;
 }
 
-Window::Window(int h, int w) :	height(h),
+Window::Window(int w, int h) :	height(h),
 							 	width(w),
 								_window(NULL),
 								renderer(NULL)

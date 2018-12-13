@@ -11,8 +11,8 @@ Player::Player(){
 Player::Player(Vec2 pos, Vec2 dir, const char* texName, Window *win){
 	SDL_Surface*	surface;
 
-	_position = Vec2();
-	_direction = Vec2();
+	_position = pos;
+	_direction = dir;
 
 	surface = IMG_Load(texName);
 	_texture = SDL_CreateTextureFromSurface(win->renderer, surface);
@@ -24,11 +24,11 @@ Player::~Player(){
 }
 
 void	Player::moveUp(){
-	_position = _position + Vec2(0, 1.0);
+	_position = _position + Vec2(0, -1.0);
 }
 
 void	Player::moveDown(){
-	_position = _position + Vec2(0, -1.0);
+	_position = _position + Vec2(0, 1.0);
 }
 
 void	Player::moveLeft(){
