@@ -25,7 +25,7 @@ Unit::~Unit(){
 
 void Unit::draw(Window *win){
 	setBounds(_position, Vec2(50 ,50)); //size 50x50
-	std::cout<<_bounds.x<<_bounds.y<<_bounds.w<<_bounds.h<<std::endl;
+	std::cout<<"("<<_bounds.x<<" , "<<_bounds.y<<")("<<_bounds.w<<" , "<<_bounds.h<<")"<<std::endl;
 	if (_texture){
 		SDL_RenderCopy(win->renderer, _texture, NULL, &_bounds);
 	}
@@ -42,5 +42,7 @@ void Unit::setBounds(Vec2 pos, Vec2 dim){
 }
 
 Vec2 Unit::getPos(){
-	return Vec2(_position.x, _position.y);
+	Vec2 vec = Vec2(_position.x, _position.y);
+	std::cout<<vec<<std::endl;
+	return vec;
 }

@@ -31,7 +31,7 @@ void	Enemy::moveTo(Vec2 point){
 	if (_position.x < point.x)
 		_position.x += STEP;
 	else
-		_position.x += STEP;	
+		_position.x -= STEP;	
 }
 
 void	Enemy::moveTo(Unit unit){

@@ -27,7 +27,8 @@ int	main(int ac, char **av){
 		// unit.draw(&win);
 		player.draw(&win);
 		enemy.draw(&win);
-		enemy.moveTo(player);
+		// enemy.moveTo(win.center());
+		enemy.moveTo(player.getPos());
 		run = win.update();
 		//test
 		if (run == 2)
@@ -45,4 +46,4 @@ int	main(int ac, char **av){
 }
 
 //clang++ main.cpp Window.cpp Vec2.cpp Unit.cpp Player.cpp Enemy.cpp -F /Library/Frameworks  -framework SDL2 -framework SDL2_image
-//clang++ main.cpp Window.cpp Vec2.cpp Unit.cpp Player.cpp Enemy.cpp-F ~/Library/Frameworks  -framework SDL2 -framework SDL2_image
+//clang++ main.cpp Window.cpp Vec2.cpp Unit.cpp Player.cpp Enemy.cpp -F ~/Library/Frameworks  -framework SDL2 -framework SDL2_image

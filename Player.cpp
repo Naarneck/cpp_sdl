@@ -1,4 +1,5 @@
 #include "Player.h"
+#define STEP_PLAYER 2.0
 
 Player::Player(){
 	_name = "Player";
@@ -24,18 +25,18 @@ Player::~Player(){
 }
 
 void	Player::moveUp(){
-	_position = _position + Vec2(0, -1.0);
+	_position = _position + Vec2(0, -STEP_PLAYER);
 }
 
 void	Player::moveDown(){
-	_position = _position + Vec2(0, 1.0);
+	_position = _position + Vec2(0, STEP_PLAYER);
 }
 
 void	Player::moveLeft(){
-	_position = _position + Vec2(-1.0, 0);
+	_position = _position + Vec2(-STEP_PLAYER, 0);
 }
 
 void	Player::moveRight(){
-	_position = _position + Vec2(1.0, 0);
+	_position = _position + Vec2(STEP_PLAYER, 0);
 }
 
